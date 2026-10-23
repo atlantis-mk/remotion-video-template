@@ -75,3 +75,10 @@ python3 scripts/validate.py leak <slug>
 | **`<slug>/project/AGENTS.md`** | `scaffold_project.py` 按 `assets/project-template/AGENTS.md.tmpl` 生成（F-14） | **那条视频工程**（`npm ci`、预览、渲染、自检、风格与密钥约定） |
 
 不要把二者混用：改「怎么用模板」改仓库根本文件；改「单次工程内约定」改技能内模板。
+
+## 7. 人读文档
+
+- 最短上手：仓库根 `使用说明.md`
+- 总览：`README.md`
+- 技术文档（需求 / 架构 / 接口 / 测试 / 使用）：`docs/`
+

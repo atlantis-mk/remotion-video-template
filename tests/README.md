@@ -134,6 +134,11 @@ F-01～F-17、NF-01～NF-08 共 25 条全部有用例，明细见 `TRACEABILITY.
 ## 6. 运行结果
 
 ### v1.11（2026-10-23 UTC+8）
+
+**已上线结论（流程第 8 步同步）**：自动门禁 `bash run_all.sh all` — **210 用例自动层全绿**；L5（AE-01～15）无 `AGENT_RUNNER` 时 **15 SKIP**（人工评测另做）。公开仓 commit `2871d6a71e4e7c36fae4c96a5646c6fc9c1ac859`。对外摘要见仓库 `docs/testing.md`。
+
+以下为同日调试过程记录（保留）：
+
 - 入口校验：`sha256sum -c /tmp/tests_v110/SHA256SUMS` 全部 OK，无新增/缺失文件。
 - 旧用例（v1.10）跑当前实现 integration：22/32 pass（前端日志）→ 本轮复跑 24/32；8 个失败全部归因为测试缺陷（见 4.0 v1.11 ①③④）。
 - 修复后当前实现：ts 18/18；integration 32/32（1724 s）；static 30/31，S-LAY-01 FAIL：presets.ts 用 `1_920` 等数字分隔符书写，属前端须恢复项。

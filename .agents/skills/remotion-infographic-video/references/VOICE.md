@@ -36,9 +36,11 @@ python3 scripts/tts_doubao.py <slug>/script.md --out-dir <slug>/voice \
 - 英文缩写容易误读时，在稿件里写成读法（如“A I”），或换中文说法。
 
 ## 5. 时间轴与字幕
-- `timeline.json` 每句含 `id, section, text, context, silence_ms, speech_rate, start, end, duration_s`；首句 `start = 0`，相邻句首尾相接（容差 1ms），末句 `end` 不超过 `audio_seconds`。
+- `timeline.json` 每句含 `id, section, text, context, silence_ms, speech_rate, start, speech_end_s, end, duration_s`（v1.9：`speech_end_s` 必填）。
+  - `start` = 上一句 `end`（首句 0）；`speech_end_s` = start + 发声时长；`end` = speech_end_s + silence_ms/1000（末句可被钳位到 `audio_seconds`）；`duration_s` = end − start（含句后停顿）。
+  - 相邻句首尾相接（容差 1ms）；字幕只在发声窗口 `[start, speech_end_s]` 显示；段/镜头区间用 `[start, end)`。
 - `full.mp3` = 各句音频 + 各句 `silence_ms` 顺序拼接，不额外追加尾部静音。
-- `subtitles.json`：豆包未返回字级时间时，按标点切分并按字数比例在句区间内分配；cue `id` 唯一。
+- `subtitles.json`：豆包未返回字级时间时，按标点切分并按字数比例在**发声窗口**内分配；cue `id` 唯一。
 
 ## 6. 响度
 - 拼接后统一做两遍 `loudnorm`（目标 -16 LUFS、TP -1.5、LRA 11），再测量；不在 -16±1 LUFS 内返回退出码 7（F-05）。
