@@ -1,0 +1,26 @@
+{
+  "id": "AE-11",
+  "covers": [
+    "F-03",
+    "F-16"
+  ],
+  "title": "选题含糊（一个词）→不追问，交付时说明切入角度",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：芯片"
+  ],
+  "checks": [
+    {
+      "type": "no_question_until_delivery"
+    },
+    {
+      "type": "last_reply_contains_any",
+      "values": [
+        "切入角度",
+        "角度"
+      ]
+    }
+  ]
+}

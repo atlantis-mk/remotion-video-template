@@ -1,0 +1,38 @@
+{
+  "id": "AE-04",
+  "covers": [
+    "F-17"
+  ],
+  "title": "用户回复“填好了”→重新读取 .env 并继续，不再重复提示",
+  "setup": {
+    "env": "missing_then_filled"
+  },
+  "user_turns": [
+    "开始制作：AI 芯片出口管制",
+    "填好了"
+  ],
+  "checks": [
+    {
+      "type": "tool_call_after_turn",
+      "turn": 2,
+      "pattern": "check_env\\.py"
+    },
+    {
+      "type": "tool_call_after_turn",
+      "turn": 2,
+      "pattern": "tts_doubao\\.py"
+    },
+    {
+      "type": "replies_after_turn_not_contains",
+      "turn": 2,
+      "values": [
+        "填写 DOUBAO_TTS_API_KEY",
+        "请在"
+      ]
+    },
+    {
+      "type": "no_question_until_delivery",
+      "from_turn": 2
+    }
+  ]
+}

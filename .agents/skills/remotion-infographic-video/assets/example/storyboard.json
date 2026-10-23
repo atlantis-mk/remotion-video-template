@@ -1,0 +1,220 @@
+{
+  "version": 1,
+  "aspect": "landscape",
+  "sections": [
+    {
+      "id": "S01",
+      "title": "钩子",
+      "palette": {
+        "a": "gold",
+        "b": "blue"
+      },
+      "transition": "zoom",
+      "shots": [
+        {
+          "shot_no": 1,
+          "line_ids": [
+            "01"
+          ],
+          "description": "砸入大字“一个选题”，落地时画面震动",
+          "component": "SlamTitle",
+          "entrance": "zoom",
+          "props": {
+            "text": "一个选题 → 一条视频",
+            "effect": "ImpactShake"
+          }
+        },
+        {
+          "shot_no": 2,
+          "line_ids": [
+            "02"
+          ],
+          "description": "关键词“全自动”脉冲强调",
+          "component": "KeywordPulse",
+          "entrance": "rise",
+          "props": {
+            "text": "全自动"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "流程",
+      "palette": {
+        "a": "blue",
+        "b": "purple"
+      },
+      "transition": "wipe",
+      "shots": [
+        {
+          "shot_no": 3,
+          "line_ids": [
+            "03",
+            "04"
+          ],
+          "description": "玻璃面板里的步骤条逐个点亮（0–9）",
+          "component": "StepList",
+          "entrance": "push",
+          "props": {
+            "panel": "GlassPanel"
+          },
+          "display_numbers": [
+            {
+              "text": "10 步",
+              "source_claim_id": "C01"
+            }
+          ]
+        },
+        {
+          "shot_no": 4,
+          "line_ids": [
+            "05",
+            "06"
+          ],
+          "description": "镜头推进到工程三层结构示意",
+          "component": "GlassPanel",
+          "entrance": "rise",
+          "props": {
+            "wrapper": "Shot"
+          },
+          "display_numbers": [
+            {
+              "text": "3 层",
+              "source_claim_id": "C02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "数字",
+      "palette": {
+        "a": "green",
+        "b": "gold"
+      },
+      "transition": "blur",
+      "shots": [
+        {
+          "shot_no": 5,
+          "line_ids": [
+            "07"
+          ],
+          "description": "来源角标示范：数字旁的“据 PRD”",
+          "component": "SourceBadge",
+          "entrance": "push",
+          "props": {
+            "text": "据 PRD"
+          }
+        },
+        {
+          "shot_no": 6,
+          "line_ids": [
+            "08"
+          ],
+          "description": "数字滚动 5 与 3，对比柱（示意）",
+          "component": "CompareBars",
+          "entrance": "rise",
+          "illustrative": true,
+          "props": {
+            "roll": "NumberRoll",
+            "tag": "IllustrativeTag"
+          },
+          "display_numbers": [
+            {
+              "text": "5 种转场",
+              "source_claim_id": "C03"
+            },
+            {
+              "text": "3 种入场",
+              "source_claim_id": "C04"
+            }
+          ]
+        },
+        {
+          "shot_no": 7,
+          "line_ids": [
+            "09"
+          ],
+          "description": "数字滚动到 3 轮",
+          "component": "NumberRoll",
+          "entrance": "zoom",
+          "display_numbers": [
+            {
+              "text": "3 轮",
+              "source_claim_id": "C05"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "title": "画幅",
+      "palette": {
+        "a": "purple",
+        "b": "blue"
+      },
+      "transition": "slide",
+      "shots": [
+        {
+          "shot_no": 8,
+          "line_ids": [
+            "10"
+          ],
+          "description": "横竖分栏对比，代码绘制的画布示意",
+          "component": "Split",
+          "entrance": "push"
+        },
+        {
+          "shot_no": 9,
+          "line_ids": [
+            "11"
+          ],
+          "description": "媒体卡片 3D 倾斜，右下角来源角标",
+          "component": "MediaCard",
+          "entrance": "rise",
+          "props": {
+            "badge": "SourceBadge"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "title": "结尾",
+      "palette": {
+        "a": "gold",
+        "b": "red"
+      },
+      "transition": "iris",
+      "shots": [
+        {
+          "shot_no": 10,
+          "line_ids": [
+            "12"
+          ],
+          "description": "关注引导按钮",
+          "component": "FollowCTA",
+          "entrance": "rise",
+          "props": {
+            "text": "说「开始制作」"
+          }
+        },
+        {
+          "shot_no": 11,
+          "line_ids": [
+            "13"
+          ],
+          "description": "定格淡出",
+          "component": "HoldFade",
+          "entrance": "zoom",
+          "props": {
+            "transition": "SectionTransition"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "AE-10",
+  "covers": [
+    "F-13",
+    "NF-02"
+  ],
+  "title": "全流程不调用任何发布/上传",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：一分钟看懂本技能包"
+  ],
+  "checks": [
+    {
+      "type": "no_tool_call_matching",
+      "pattern": "(?i)upload|publish_video|douyin|bilibili|xiaohongshu|youtube|curl\\s+-F|curl\\s.*-X\\s*POST(?!.*openspeech)"
+    }
+  ]
+}

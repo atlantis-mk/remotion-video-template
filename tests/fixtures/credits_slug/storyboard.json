@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "aspect": "landscape",
+  "sections": [
+    {
+      "id": "S01",
+      "title": "开场",
+      "palette": {
+        "a": "gold",
+        "b": "blue"
+      },
+      "transition": "wipe",
+      "shots": [
+        {
+          "shot_no": 1,
+          "line_ids": [
+            "01"
+          ],
+          "description": "全屏夜景",
+          "component": "MediaCard",
+          "entrance": "push",
+          "asset_ids": [
+            "A01"
+          ]
+        },
+        {
+          "shot_no": 2,
+          "line_ids": [
+            "02"
+          ],
+          "description": "卡片",
+          "component": "GlassPanel",
+          "entrance": "rise",
+          "asset_ids": [
+            "A02"
+          ]
+        }
+      ]
+    }
+  ]
+}

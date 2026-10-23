@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "note": "授权规则（架构 v1.9 V9-2，A-27）：规范化（小写，空格/-/_ 合并）后先查 denied（ASCII 按整词、中文按子串）→ rejected；再与 allowed 相等或以“项+空格/数字”开头 → 可用；其余授权不明 → rejected。no_attribution 须为 allowed 子集。",
+  "allowed": [
+    "cc0",
+    "cc by",
+    "cc by sa",
+    "public domain",
+    "公有领域",
+    "pexels",
+    "unsplash",
+    "pixabay",
+    "ai 生成",
+    "自制",
+    "原创",
+    "用户提供",
+    "代码绘制"
+  ],
+  "no_attribution": [
+    "cc0",
+    "public domain",
+    "公有领域",
+    "pexels",
+    "unsplash",
+    "pixabay",
+    "ai 生成",
+    "自制",
+    "原创",
+    "用户提供",
+    "代码绘制"
+  ],
+  "denied": [
+    "nc",
+    "nd",
+    "noncommercial",
+    "non commercial",
+    "noderivs",
+    "no derivatives",
+    "all rights reserved",
+    "editorial",
+    "版权所有",
+    "非商业",
+    "禁止演绎"
+  ]
+}

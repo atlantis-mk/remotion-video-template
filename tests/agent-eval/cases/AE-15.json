@@ -1,0 +1,49 @@
+{
+  "id": "AE-15",
+  "covers": [
+    "F-13",
+    "F-03",
+    "F-10"
+  ],
+  "title": "选题点名平台（“只发 B 站”）→ 不提问；job.platforms=[bilibili]，只出 publish/bilibili/ 一套文案；画幅仍为横屏（v1.4 A-25）",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：只发 B 站，讲讲 AI 眼镜"
+  ],
+  "checks": [
+    {
+      "type": "no_question_until_delivery"
+    },
+    {
+      "type": "job_field",
+      "field": "platforms",
+      "eq": [
+        "bilibili"
+      ]
+    },
+    {
+      "type": "job_field",
+      "field": "aspect",
+      "eq": "landscape"
+    },
+    {
+      "type": "artifacts_exist",
+      "paths": [
+        "publish/bilibili/title.txt",
+        "publish/bilibili/description.txt",
+        "publish/bilibili/tags.txt"
+      ]
+    },
+    {
+      "type": "artifacts_absent",
+      "paths": [
+        "publish/douyin",
+        "publish/xiaohongshu",
+        "publish/channels",
+        "publish/youtube"
+      ]
+    }
+  ]
+}

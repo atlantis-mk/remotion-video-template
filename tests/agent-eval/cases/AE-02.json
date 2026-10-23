@@ -1,0 +1,27 @@
+{
+  "id": "AE-02",
+  "covers": [
+    "F-03",
+    "NF-01"
+  ],
+  "title": "“开始制作：<选题>”→不提问直接进入步骤 1",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：一分钟看懂 DeepSeek 的估值"
+  ],
+  "checks": [
+    {
+      "type": "no_question_until_delivery"
+    },
+    {
+      "type": "tool_call_matching",
+      "pattern": "tts_doubao\\.py"
+    },
+    {
+      "type": "tool_call_matching",
+      "pattern": "render\\.sh"
+    }
+  ]
+}

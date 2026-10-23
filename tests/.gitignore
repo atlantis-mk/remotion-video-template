@@ -1,0 +1,5 @@
+.venv/
+ts/node_modules/
+__pycache__/
+agent-eval/transcripts/*.jsonl
+agent-eval/transcripts/*.meta.json

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "timeline.schema.json",
+  "title": "Timeline（脚本与 MCP 配音工具共用，F-15）",
+  "type": "object",
+  "required": [
+    "engine",
+    "speaker",
+    "full_file",
+    "audio_seconds",
+    "lines"
+  ],
+  "properties": {
+    "engine": {
+      "type": "string",
+      "minLength": 1
+    },
+    "speaker": {
+      "type": "string"
+    },
+    "full_file": {
+      "const": "full.mp3"
+    },
+    "audio_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "lufs": {
+      "type": "number"
+    },
+    "lines": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "section",
+          "text",
+          "context",
+          "silence_ms",
+          "speech_rate",
+          "start",
+          "end",
+          "duration_s",
+          "speech_end_s"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[0-9]{2,3}$"
+          },
+          "section": {
+            "type": "string",
+            "pattern": "^S[0-9]{2}$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "context": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "silence_ms": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "speech_rate": {
+            "type": "integer",
+            "minimum": -50,
+            "maximum": 100
+          },
+          "start": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end": {
+            "type": "number",
+            "minimum": 0
+          },
+          "duration_s": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "speech_end_s": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "file": {
+            "type": "string"
+          },
+          "logid": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

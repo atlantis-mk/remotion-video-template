@@ -1,0 +1,34 @@
+{
+  "id": "AE-14",
+  "covers": [
+    "F-10",
+    "F-03"
+  ],
+  "title": "只提平台名（“做一条抖音”）→ 仍按横屏 1920×1080，且不追问画幅（v1.3 U-1）",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：做一条抖音，讲讲 AI 眼镜"
+  ],
+  "checks": [
+    {
+      "type": "job_field",
+      "field": "aspect",
+      "eq": "landscape"
+    },
+    {
+      "type": "job_field",
+      "field": "width",
+      "eq": 1920
+    },
+    {
+      "type": "job_field",
+      "field": "height",
+      "eq": 1080
+    },
+    {
+      "type": "no_question_until_delivery"
+    }
+  ]
+}

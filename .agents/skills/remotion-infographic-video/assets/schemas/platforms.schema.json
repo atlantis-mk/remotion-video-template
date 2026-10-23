@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "platforms.schema.json",
+  "title": "PUBLISH.md 平台规范表",
+  "type": "object",
+  "required": [
+    "version",
+    "default_targets",
+    "platforms"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "default_targets": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "douyin",
+          "bilibili",
+          "xiaohongshu",
+          "channels",
+          "youtube"
+        ]
+      }
+    },
+    "platforms": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "enum": [
+          "douyin",
+          "bilibili",
+          "xiaohongshu",
+          "channels",
+          "youtube"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "title"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "object",
+            "required": [
+              "max",
+              "count",
+              "status",
+              "source"
+            ],
+            "properties": {
+              "max": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "min": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "strict_less_than": {
+                "type": "boolean"
+              },
+              "count": {
+                "enum": [
+                  "grapheme",
+                  "cjk1_ascii_half",
+                  "utf8_bytes"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "official",
+                  "unofficial"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "note": {
+                "type": "string"
+              },
+              "forbid_chars": {
+                "type": "string"
+              }
+            }
+          },
+          "description": {
+            "type": "object",
+            "required": [
+              "max",
+              "count",
+              "status",
+              "source"
+            ],
+            "properties": {
+              "max": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "min": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "strict_less_than": {
+                "type": "boolean"
+              },
+              "count": {
+                "enum": [
+                  "grapheme",
+                  "cjk1_ascii_half",
+                  "utf8_bytes"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "official",
+                  "unofficial"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "note": {
+                "type": "string"
+              },
+              "forbid_chars": {
+                "type": "string"
+              }
+            }
+          },
+          "tags": {
+            "type": "object",
+            "required": [
+              "status",
+              "source"
+            ],
+            "properties": {
+              "max_items": {
+                "type": "integer"
+              },
+              "joined_max": {
+                "type": "integer"
+              },
+              "join": {
+                "type": "string"
+              },
+              "strict_less_than": {
+                "type": "boolean"
+              },
+              "count": {
+                "enum": [
+                  "grapheme",
+                  "cjk1_ascii_half",
+                  "utf8_bytes",
+                  "youtube_tags"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "official",
+                  "unofficial"
+                ]
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

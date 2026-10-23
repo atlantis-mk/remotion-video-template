@@ -1,0 +1,39 @@
+{
+  "id": "AE-07",
+  "covers": [
+    "F-10"
+  ],
+  "title": "选题注明“竖屏”→ 3:4 1080×1440（v1.3 U-1）",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：讲讲 AI 眼镜，竖屏"
+  ],
+  "checks": [
+    {
+      "type": "job_field",
+      "field": "aspect",
+      "eq": "portrait"
+    },
+    {
+      "type": "job_field",
+      "field": "width",
+      "eq": 1080
+    },
+    {
+      "type": "job_field",
+      "field": "height",
+      "eq": 1440
+    },
+    {
+      "type": "artifacts_exist",
+      "paths": [
+        "publish/cover_1080x1440.png"
+      ]
+    },
+    {
+      "type": "no_question_until_delivery"
+    }
+  ]
+}

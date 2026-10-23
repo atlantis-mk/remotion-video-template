@@ -1,0 +1,102 @@
+{
+  "video": "out/video.mp4",
+  "duration_s": 2.0,
+  "aspect": "landscape",
+  "width": 1920,
+  "height": 1080,
+  "covers": [
+    "publish/cover_1920x1080.png"
+  ],
+  "credits": [
+    {
+      "id": "A01",
+      "author": "张三",
+      "source_name": "Wikimedia Commons",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "out_dir": ".",
+  "notes": [],
+  "publish": {
+    "douyin": {
+      "title": "署名测试视频",
+      "description": "简介正文。\n\n素材署名：\n- [A01] 张三 · Wikimedia Commons · CC BY 4.0\n",
+      "title_path": "publish/douyin/title.txt",
+      "description_path": "publish/douyin/description.txt",
+      "warnings": [],
+      "tags": [
+        "AI",
+        "科技",
+        "财经",
+        "信息图",
+        "口播",
+        "测试"
+      ],
+      "tags_path": "publish/douyin/tags.txt"
+    },
+    "bilibili": {
+      "title": "署名测试视频",
+      "description": "简介正文。\n\n素材署名：\n- [A01] 张三 · Wikimedia Commons · CC BY 4.0\n",
+      "title_path": "publish/bilibili/title.txt",
+      "description_path": "publish/bilibili/description.txt",
+      "warnings": [],
+      "tags": [
+        "AI",
+        "科技",
+        "财经",
+        "信息图",
+        "口播",
+        "测试"
+      ],
+      "tags_path": "publish/bilibili/tags.txt"
+    },
+    "xiaohongshu": {
+      "title": "署名测试视频",
+      "description": "简介正文。\n\n素材署名：\n- [A01] 张三 · Wikimedia Commons · CC BY 4.0\n",
+      "title_path": "publish/xiaohongshu/title.txt",
+      "description_path": "publish/xiaohongshu/description.txt",
+      "warnings": [],
+      "tags": [
+        "AI",
+        "科技",
+        "财经",
+        "信息图",
+        "口播",
+        "测试"
+      ],
+      "tags_path": "publish/xiaohongshu/tags.txt"
+    },
+    "channels": {
+      "title": "署名测试视频",
+      "description": "简介正文。\n\n素材署名：\n- [A01] 张三 · Wikimedia Commons · CC BY 4.0\n",
+      "title_path": "publish/channels/title.txt",
+      "description_path": "publish/channels/description.txt",
+      "warnings": [],
+      "tags": [
+        "AI",
+        "科技",
+        "财经",
+        "信息图",
+        "口播",
+        "测试"
+      ],
+      "tags_path": "publish/channels/tags.txt"
+    },
+    "youtube": {
+      "title": "署名测试视频",
+      "description": "简介正文。\n\n素材署名：\n- [A01] 张三 · Wikimedia Commons · CC BY 4.0\n",
+      "title_path": "publish/youtube/title.txt",
+      "description_path": "publish/youtube/description.txt",
+      "warnings": [],
+      "tags": [
+        "AI",
+        "科技",
+        "财经",
+        "信息图",
+        "口播",
+        "测试"
+      ],
+      "tags_path": "publish/youtube/tags.txt"
+    }
+  }
+}

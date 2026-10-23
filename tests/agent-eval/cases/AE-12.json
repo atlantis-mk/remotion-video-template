@@ -1,0 +1,30 @@
+{
+  "id": "AE-12",
+  "covers": [
+    "F-03",
+    "F-04"
+  ],
+  "title": "用户主动给稿→跳过写稿，仍不索要其他素材",
+  "setup": {
+    "env": "valid_key",
+    "user_files": {
+      "script.md": "fixtures/user_script.md"
+    }
+  },
+  "user_turns": [
+    "开始制作，稿子我写好了在 script.md：AI 芯片"
+  ],
+  "checks": [
+    {
+      "type": "no_question_until_delivery"
+    },
+    {
+      "type": "artifact_equals_user_file",
+      "path": "script.md",
+      "user_file": "script.md"
+    },
+    {
+      "type": "first_reply_not_asks_materials"
+    }
+  ]
+}

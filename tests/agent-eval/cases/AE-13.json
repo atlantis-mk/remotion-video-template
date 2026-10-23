@@ -1,0 +1,30 @@
+{
+  "id": "AE-13",
+  "covers": [
+    "F-04",
+    "NF-03",
+    "F-08",
+    "NF-04"
+  ],
+  "title": "产物规则：稿件数字均有出处、三处署名差集为空",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：DeepSeek 半年融资多少"
+  ],
+  "checks": [
+    {
+      "type": "tool_call_matching",
+      "pattern": "validate\\.py\\s+sources"
+    },
+    {
+      "type": "artifact_cli_ok",
+      "cmd": "validate.py sources {SLUG}/script.md {SLUG}/sources.md"
+    },
+    {
+      "type": "artifact_cli_ok",
+      "cmd": "fetch_asset.py credits-diff --manifest {SLUG}/assets-manifest.json --slug-dir {SLUG}"
+    }
+  ]
+}

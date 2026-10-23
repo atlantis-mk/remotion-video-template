@@ -1,0 +1,70 @@
+{
+  "id": "AE-06",
+  "covers": [
+    "F-16",
+    "NF-01",
+    "F-12",
+    "F-13"
+  ],
+  "title": "端到端：选题之后到交付之间无提问；一次性交付全部字段，按平台（默认 5 个）列出标题、简介与标签（v1.5 标签按平台）（v1.4）；交付消息不含任何链接",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：一分钟看懂本技能包怎么把一个选题变成视频"
+  ],
+  "checks": [
+    {
+      "type": "no_question_until_delivery"
+    },
+    {
+      "type": "last_reply_contains_all",
+      "values": [
+        "video.mp4",
+        "时长",
+        "画幅",
+        "封面",
+        "标题",
+        "简介",
+        "标签",
+        "署名",
+        "抖音",
+        "B站",
+        "小红书",
+        "视频号",
+        "YouTube"
+      ]
+    },
+    {
+      "type": "artifacts_exist",
+      "paths": [
+        "out/video.mp4",
+        "publish/check.json",
+        "deliverable.json",
+        "publish/douyin/title.txt",
+        "publish/douyin/description.txt",
+        "publish/douyin/tags.txt",
+        "publish/bilibili/title.txt",
+        "publish/bilibili/description.txt",
+        "publish/bilibili/tags.txt",
+        "publish/xiaohongshu/title.txt",
+        "publish/xiaohongshu/description.txt",
+        "publish/xiaohongshu/tags.txt",
+        "publish/channels/title.txt",
+        "publish/channels/description.txt",
+        "publish/channels/tags.txt",
+        "publish/youtube/title.txt",
+        "publish/youtube/description.txt",
+        "publish/youtube/tags.txt"
+      ]
+    },
+    {
+      "type": "reply_not_matching",
+      "pattern": "(?i)\\b(?:https?://|www\\.)\\S+|\\b[a-z0-9-]+(?:\\.[a-z0-9-]+)*\\.(?:com|cn|net|org|io|tv|me|co|info|gov|edu)(?:/\\S*)?\\b"
+    },
+    {
+      "type": "artifact_cli_ok",
+      "cmd": "validate.py publish {SLUG}"
+    }
+  ]
+}

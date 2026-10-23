@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "check-report.schema.json",
+  "title": "check/report.json（check_project.sh 自检报告）",
+  "type": "object",
+  "required": [
+    "ok",
+    "attempt",
+    "aspect",
+    "failed_step",
+    "steps",
+    "log_path"
+  ],
+  "properties": {
+    "ok": {
+      "type": "boolean"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "aspect": {
+      "enum": [
+        "landscape",
+        "portrait",
+        "both"
+      ]
+    },
+    "failed_step": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "enum": [
+            "tsc",
+            "compositions",
+            "frames",
+            "safe_area",
+            "static",
+            "determinism"
+          ]
+        }
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "ok",
+          "log_path",
+          "duration_ms"
+        ],
+        "properties": {
+          "name": {
+            "enum": [
+              "tsc",
+              "compositions",
+              "frames",
+              "safe_area",
+              "static",
+              "determinism"
+            ]
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "log_path": {
+            "type": "string"
+          },
+          "duration_ms": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "message": {
+            "type": "string"
+          },
+          "aspect": {
+            "enum": [
+              "landscape",
+              "portrait"
+            ]
+          }
+        }
+      }
+    },
+    "log_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

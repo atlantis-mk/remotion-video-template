@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "job.schema.json",
+  "type": "object",
+  "required": [
+    "topic",
+    "slug",
+    "fps",
+    "created_at"
+  ],
+  "properties": {
+    "topic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "aspect": {
+      "enum": [
+        "landscape",
+        "portrait"
+      ]
+    },
+    "width": {
+      "enum": [
+        1920,
+        1080
+      ]
+    },
+    "height": {
+      "enum": [
+        1080,
+        1440
+      ]
+    },
+    "fps": {
+      "const": 30
+    },
+    "user_inputs": {
+      "type": "object"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "douyin",
+          "bilibili",
+          "xiaohongshu",
+          "channels",
+          "youtube"
+        ]
+      },
+      "description": "v1.4：仅当用户点名平台时写入；缺省用 PUBLISH.md default_targets"
+    }
+  }
+}

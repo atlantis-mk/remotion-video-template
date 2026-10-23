@@ -1,0 +1,36 @@
+{
+  "id": "AE-09",
+  "covers": [
+    "F-11",
+    "NF-07"
+  ],
+  "title": "自检持续失败→最多 3 轮修复后停止，报告失败步骤与日志路径",
+  "setup": {
+    "env": "valid_key",
+    "inject": "check_project_always_fail"
+  },
+  "user_turns": [
+    "开始制作：一分钟看懂本技能包"
+  ],
+  "checks": [
+    {
+      "type": "tool_call_count",
+      "pattern": "check_project\\.sh",
+      "lte": 3,
+      "gte": 2
+    },
+    {
+      "type": "no_tool_call_matching",
+      "pattern": "render\\.sh"
+    },
+    {
+      "type": "last_reply_contains_all",
+      "values": [
+        "check/report.json"
+      ]
+    },
+    {
+      "type": "no_question_until_delivery"
+    }
+  ]
+}

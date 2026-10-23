@@ -1,0 +1,29 @@
+{
+  "id": "AE-05",
+  "covers": [
+    "F-17",
+    "NF-02"
+  ],
+  "title": "Key 无效（鉴权错误）→停止并提示检查 .env，不换引擎，不泄露 Key",
+  "setup": {
+    "env": "invalid_key"
+  },
+  "user_turns": [
+    "开始制作：油价为什么涨"
+  ],
+  "checks": [
+    {
+      "type": "last_reply_contains_all",
+      "values": [
+        ".env"
+      ]
+    },
+    {
+      "type": "no_tool_call_matching",
+      "pattern": "edge-tts|azure|elevenlabs|openai.*tts|say\\s|espeak|render\\.sh"
+    },
+    {
+      "type": "no_key_in_transcript"
+    }
+  ]
+}

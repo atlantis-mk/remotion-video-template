@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "publish-check.schema.json",
+  "title": "publish/check.json",
+  "type": "object",
+  "required": [
+    "ok",
+    "targets",
+    "platforms",
+    "shared"
+  ],
+  "properties": {
+    "ok": {
+      "type": "boolean"
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "douyin",
+          "bilibili",
+          "xiaohongshu",
+          "channels",
+          "youtube"
+        ]
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "dir",
+          "title",
+          "description",
+          "errors",
+          "warnings",
+          "tags"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "douyin",
+              "bilibili",
+              "xiaohongshu",
+              "channels",
+              "youtube"
+            ]
+          },
+          "dir": {
+            "type": "string"
+          },
+          "title": {
+            "type": "object",
+            "required": [
+              "path",
+              "count",
+              "mode",
+              "status",
+              "severity",
+              "urls"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mode": {
+                "type": "string"
+              },
+              "max": {
+                "type": "integer"
+              },
+              "min": {
+                "type": "integer"
+              },
+              "status": {
+                "enum": [
+                  "official",
+                  "unofficial",
+                  "none"
+                ]
+              },
+              "severity": {
+                "enum": [
+                  "ok",
+                  "warning",
+                  "error"
+                ]
+              },
+              "urls": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": {
+            "type": "object",
+            "required": [
+              "path",
+              "count",
+              "mode",
+              "status",
+              "severity",
+              "urls",
+              "credits_missing"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "mode": {
+                "type": "string"
+              },
+              "max": {
+                "type": "integer"
+              },
+              "min": {
+                "type": "integer"
+              },
+              "status": {
+                "enum": [
+                  "official",
+                  "unofficial",
+                  "none"
+                ]
+              },
+              "severity": {
+                "enum": [
+                  "ok",
+                  "warning",
+                  "error"
+                ]
+              },
+              "urls": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "credits_missing": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "tags": {
+            "type": "object",
+            "required": [
+              "path",
+              "items",
+              "rule",
+              "severity"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "rule": {
+                "enum": [
+                  "platform",
+                  "nonempty_only"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "official",
+                  "unofficial",
+                  "none"
+                ]
+              },
+              "severity": {
+                "enum": [
+                  "ok",
+                  "warning",
+                  "error"
+                ]
+              },
+              "urls": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "shared": {
+      "type": "object",
+      "required": [
+        "covers"
+      ],
+      "properties": {
+        "covers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "width",
+              "height",
+              "ok"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "ok": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "AE-01",
+  "covers": [
+    "F-03"
+  ],
+  "title": "只说“开始制作”→只问选题",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作"
+  ],
+  "checks": [
+    {
+      "type": "first_reply_question_count",
+      "eq": 1
+    },
+    {
+      "type": "first_reply_contains_any",
+      "values": [
+        "选题"
+      ]
+    },
+    {
+      "type": "first_reply_not_asks_materials"
+    },
+    {
+      "type": "no_tool_call_matching",
+      "pattern": "tts_doubao|scaffold_project|render\\.sh"
+    },
+    {
+      "type": "turn_count_assistant_before_user_reply",
+      "eq": 1
+    },
+    {
+      "type": "question_is_topic"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "engine": "mcp:tts_synthesize",
+  "speaker": "zh_male_m191_uranus_bigtts",
+  "full_file": "full.mp3",
+  "audio_seconds": 5.2,
+  "lines": [
+    {
+      "id": "1",
+      "section": "S01",
+      "text": "第一句。",
+      "context": [
+        "平稳"
+      ],
+      "silence_ms": 300,
+      "speech_rate": 0,
+      "start": 0,
+      "end": 2.5,
+      "duration_s": 2.5,
+      "speech_end_s": 2.2
+    },
+    {
+      "id": "02",
+      "section": "S01",
+      "text": "第二句。",
+      "context": [],
+      "speech_rate": -8,
+      "start": 2.5,
+      "end": 5.2,
+      "duration_s": 2.7,
+      "speech_end_s": 5.2
+    }
+  ]
+}

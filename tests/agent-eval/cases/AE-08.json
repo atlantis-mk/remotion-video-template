@@ -1,0 +1,30 @@
+{
+  "id": "AE-08",
+  "covers": [
+    "F-10"
+  ],
+  "title": "选题未提画幅→默认横屏 1920×1080",
+  "setup": {
+    "env": "valid_key"
+  },
+  "user_turns": [
+    "开始制作：英伟达财报怎么看"
+  ],
+  "checks": [
+    {
+      "type": "job_field",
+      "field": "aspect",
+      "eq": "landscape"
+    },
+    {
+      "type": "job_field",
+      "field": "width",
+      "eq": 1920
+    },
+    {
+      "type": "job_field",
+      "field": "height",
+      "eq": 1080
+    }
+  ]
+}

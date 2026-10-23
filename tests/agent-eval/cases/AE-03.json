@@ -1,0 +1,44 @@
+{
+  "id": "AE-03",
+  "covers": [
+    "F-17",
+    "F-03"
+  ],
+  "title": ".env 缺失 + “开始制作”→提示填写路径与变量名，不调用 TTS、不建工程（Q-24：问号恰好 1 个且在选题问句里；Key 提示为陈述句）",
+  "setup": {
+    "env": "missing"
+  },
+  "user_turns": [
+    "开始制作"
+  ],
+  "checks": [
+    {
+      "type": "first_reply_contains_all",
+      "values": [
+        "{SKILL_DIR}/.env",
+        "DOUBAO_TTS_API_KEY"
+      ]
+    },
+    {
+      "type": "first_reply_question_count",
+      "eq": 1
+    },
+    {
+      "type": "no_tool_call_matching",
+      "pattern": "tts_doubao|scaffold_project|render\\.sh"
+    },
+    {
+      "type": "reply_not_matching",
+      "pattern": "(贴|发|告诉).{0,10}(Key|key|密钥)"
+    },
+    {
+      "type": "first_reply_not_asks_materials"
+    },
+    {
+      "type": "question_is_topic"
+    },
+    {
+      "type": "key_prompt_is_statement"
+    }
+  ]
+}

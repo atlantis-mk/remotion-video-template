@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "A01",
+      "file": "media/a01.png",
+      "kind": "image",
+      "content": "城市夜景",
+      "source": "https://commons.wikimedia.org/wiki/File:Example.png",
+      "license": "CC BY 4.0",
+      "needs_attribution": true,
+      "width": 2000,
+      "height": 1200,
+      "opens": true,
+      "usage": "fullscreen",
+      "usable": true,
+      "author": "张三",
+      "source_name": "Wikimedia Commons"
+    },
+    {
+      "id": "A02",
+      "file": "media/a02.png",
+      "kind": "image",
+      "content": "AI 生成背景",
+      "source": "AI 生成",
+      "license": "AI 生成",
+      "needs_attribution": false,
+      "width": 800,
+      "height": 600,
+      "opens": true,
+      "usage": "card-only",
+      "usable": true,
+      "source_name": "AI 生成"
+    },
+    {
+      "id": "A03",
+      "file": "media/a03.png",
+      "kind": "image",
+      "content": "来源不明图",
+      "source": "https://example.com/x",
+      "license": "unknown",
+      "needs_attribution": true,
+      "opens": true,
+      "usage": "rejected",
+      "usable": false,
+      "author": "佚名",
+      "source_name": "Example"
+    }
+  ]
+}
