@@ -196,8 +196,12 @@ def c_deliverable(a):
          "credits": C.deliverable_credits(man),
          "out_dir": str(slug), "notes": list(dict.fromkeys((old.get("notes") or []) + (job.get("notes") or [])))}
     write_json(slug / "deliverable.json", d)
-    errs = [] if video.exists() else ["缺少 out/video.mp4"]
-    errs += [f"署名不完整：{c['id']}" for c in d["credits"] if not (c["author"] and c["source_name"] and c["license"])]
+    # F-16：摘要字段齐全即可；成片是否存在由 validate.py video / render 验收，缺成片时 duration_s 为 null，不阻断摘要
+    notes_extra = [] if video.exists() else ["缺少 out/video.mp4（成片尚未渲染）"]
+    if notes_extra:
+        d["notes"] = list(dict.fromkeys(list(d.get("notes") or []) + notes_extra))
+        write_json(slug / "deliverable.json", d)
+    errs = [f"署名不完整：{c['id']}" for c in d["credits"] if not (c["author"] and c["source_name"] and c["license"])]
     errs += [f"credits 含链接：{c['id']}" for c in d["credits"] if find_urls(json.dumps(c, ensure_ascii=False))]
     return _fail(7, errs, {"deliverable": str(slug / "deliverable.json")}) if errs else summary(True, 0, {"deliverable": str(slug / "deliverable.json")})
 

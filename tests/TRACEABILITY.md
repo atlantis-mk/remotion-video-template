@@ -79,7 +79,7 @@
 | C-AS-06 | L2 接口契约 | F-08 | F-08 Q-03：不生成 assets-manifest.md，fetch_asset.py 没有 render-md 子命令（调用返回 2） |
 | C-AS-07 | L2 接口契约 | F-08 | F-08 v1.3：add 用 --author 与 --source-name 记录 author、source_name（source 仍留 URL）；旧参数 --attribution 退出 2 |
 | C-CLI-01 | L2 接口契约 | F-11 NF-01 | F-11 NF-01 所有 CLI 支持 --help 且退出 0；stdin 关闭时不阻塞（无交互） |
-| C-DLV-01 | L2 接口契约 | F-16 | F-16 validate.py deliverable 产出 deliverable.json，字段齐全（v1.4/v1.5：publish 按平台组织标题、简介、标签，替代顶层 title/description/tags）；credits 来自 manifest 需署名且可用项，字段为 {id, author, source_name, license}，不含 URL（v1.3） |
+| C-DLV-01 | L2 接口契约 | F-16 | F-16 validate.py deliverable 产出 deliverable.json，字段齐全（v1.4/v1.5：publish 按平台组织标题、简介、标签，替代顶层 title/description/tags）；credits 来自 manifest 需署名且可用项，字段为 {id, author, source_name, license}，不含 URL（v1.3）。缺 out/video.mp4 仍退出 0：摘要可先于成片（duration_s 可为 null，notes 提示缺成片）；成片存在性由 F-12 validate.py video / render 验收，本 fixture 故意无成片 |
 | C-ENV-01 | L2 接口契约 | F-17 | F-17 .env 缺失 → 退出 3，errors[0].kind=missing_env，含绝对 env_path 与 var |
 | C-ENV-02 | L2 接口契约 | F-17 | F-17 Key 为空 → 退出 3，kind=empty_key |
 | C-ENV-03 | L2 接口契约 | F-17 NF-02 | F-17 NF-02 有效 Key → 退出 0；stdout/stderr 不含 Key、不含其长度或前缀 |
