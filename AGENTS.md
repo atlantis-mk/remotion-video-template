@@ -82,3 +82,9 @@ python3 scripts/validate.py leak <slug>
 - 总览：`README.md`
 - 技术文档（需求 / 架构 / 接口 / 测试 / 使用）：`docs/`
 
+## 8. Cursor Cloud 环境
+
+- 基础镜像已有 Node 18+、Python 3.12、ffmpeg、ffprobe、ripgrep。环境安装脚本在缺少 `python3-venv` 时用 apt 安装它，然后执行 `npm ci --prefix tests/ts`，再执行 `bash tests/tools/install_skills_ref.sh`（`skills-ref==0.1.1` 进入 `tests/.venv`，静态检查 S-SK-02 依赖它）。
+- 自动门禁：在仓库根执行 `cd tests && bash run_all.sh all`。离线集成用 FakeTts 和本机 ffmpeg / Remotion，不调用豆包，因此不需要 `DOUBAO_TTS_API_KEY`。
+- 真实配音才要在 `.agents/skills/remotion-infographic-video/.env` 填写 Key（由 `.env.example` 复制，不要提交）。本仓库没有常驻开发服务器；Remotion Studio 只在单次视频工程目录里按需启动。
+
